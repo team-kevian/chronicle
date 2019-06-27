@@ -1,6 +1,7 @@
 import React from 'react';
+import ReactPaginate from 'react-paginate';
 
-import Card from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
 
 class EventList extends React.Component {
   constructor(props) {
@@ -27,6 +28,19 @@ class EventList extends React.Component {
             </Card>
           );
         })}
+        <ReactPaginate
+          previousLabel={'previous'}
+          nextLabel={'next'}
+          breakLabel={'...'}
+          breakClassName={'break-me'}
+          pageCount={this.props.pageCount}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={this.props.handlePageClick}
+          containerClassName={'pagination'}
+          subContainerClassName={'pages pagination'}
+          activeClassName={'active'}
+        />
       </div>
     );
   }
