@@ -13,7 +13,6 @@ class Search extends React.Component {
 
   render() {
     return (<div>
-      Search Component
       <input value={this.props.term} onChange={this.props.onChangeDetect} />
       <button onClick={this.search}>Find Results</button>
     </div>)

@@ -35,9 +35,7 @@ class App extends React.Component {
 
   render() {
     return (<div>
-      React App
       <Search onSearch={this.search} onChangeDetect={this.handleChange} term={this.state.term}/>
-      {/* <EventList /> */}
     </div>)
   }
 }
