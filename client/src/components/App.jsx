@@ -14,7 +14,6 @@ class App extends React.Component {
 
   search(term) {
     console.log(`${term} was searched`);
-
     axios
       .get(`/events?q=${term}`)
       .then(response => {
