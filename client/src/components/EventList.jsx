@@ -12,7 +12,7 @@ class EventList extends React.Component {
       <div>
         {this.props.events.map((item, i) => {
           return (
-            <Card key={i}>
+            <Card bg="dark" text="white" key={i}>
               <Card.Header> </Card.Header>
               <Card.Body>
                 <blockquote className="blockquote mb-0">
