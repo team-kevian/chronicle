@@ -11,7 +11,7 @@ class EventList extends React.Component {
   render() {
     return (
       <div>
-        {this.props.events.map((item, i) => {
+        {this.props.items.map((item, i) => {
           return (
             <Card bg="dark" text="white" key={i}>
               <Card.Header> </Card.Header>

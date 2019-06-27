@@ -5,7 +5,7 @@ import EventList from './EventList.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { events: [], pageCount: 0, term: '' };
+    this.state = { items: [], pageCount: 0, term: '' };
     this.handlePageClick = this.handlePageClick.bind(this);
   }
 
@@ -58,7 +58,7 @@ class App extends React.Component {
       .get(term)
       .then(data => {
         console.log(data.data);
-        this.setState({ events: data.data });
+        this.setState({ items: data.data });
       })
       .catch(err => {
         console.log(
@@ -72,7 +72,7 @@ class App extends React.Component {
     return (
       <EventList
         pageCount={this.state.pageCount}
-        events={this.state.events}
+        items={this.state.items}
         handlePageClick={this.handlePageClick}
       />
     );
