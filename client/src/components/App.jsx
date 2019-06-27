@@ -7,9 +7,11 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      items: []
+      items: [],
+      term: ""
     }
     this.search = this.search.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   search(term) {
@@ -25,10 +27,16 @@ class App extends React.Component {
       .catch(err => console.error(err));
   }
 
+  handleChange(e) {
+    this.setState({
+      term: e.target.value
+    });
+  }
+
   render() {
     return (<div>
       React App
-      <Search onSearch={this.search}/>
+      <Search onSearch={this.search} onChangeDetect={this.handleChange} term={this.state.term}/>
       {/* <EventList /> */}
     </div>)
   }
