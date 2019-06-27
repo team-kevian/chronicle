@@ -29,7 +29,7 @@ class App extends React.Component {
           .get('http://localhost:3000/events?_page=1')
           .then(data => {
             console.log('This is pcount:', pcount);
-            this.setState({ events: data.data, pageCount: pcount });
+            this.setState({ items: data.data, pageCount: pcount });
             console.log(this.state.pageCount);
           })
           .catch(err => {
