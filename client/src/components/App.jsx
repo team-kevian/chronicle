@@ -5,12 +5,12 @@ import axios from 'axios';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       items: [],
-      term: "",
+      term: '',
       pageCount: 0
-    }
+    };
     this.search = this.search.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
@@ -21,16 +21,13 @@ class App extends React.Component {
     axios
       .get('http://localhost:3000/events?')
       .then(data => {
-        console.log(data.data.length);
         pcount = data.data.length / 10;
-        console.log('THIS IS PCOUNT:', pcount);
 
         axios
           .get('http://localhost:3000/events?_page=1')
           .then(data => {
             console.log('This is pcount:', pcount);
             this.setState({ items: data.data, pageCount: pcount });
-            console.log(this.state.pageCount);
           })
           .catch(err => {
             console.log(
@@ -64,7 +61,6 @@ class App extends React.Component {
     axios
       .get(term)
       .then(data => {
-        console.log(data.data);
         this.setState({ items: data.data });
       })
       .catch(err => {
@@ -76,7 +72,6 @@ class App extends React.Component {
   }
 
   search(term) {
-    console.log(`${term} was searched`);
     axios
       .get(`/events?q=${term}`)
       .then(response => {
@@ -95,18 +90,20 @@ class App extends React.Component {
   }
 
   render() {
-    return (<div>
-      <div id="title">Chronicle</div>
-      <Search onSearch={this.search} 
-        onChangeDetect={this.handleChange} 
-        term={this.state.term} 
-      />
-      <EventList
-        pageCount={this.state.pageCount}
-        items={this.state.items}
-        handlePageClick={this.handlePageClick}
-      />
-    </div>)
+    return (
+      <div>
+        <Search
+          onSearch={this.search}
+          onChangeDetect={this.handleChange}
+          term={this.state.term}
+        />
+        <EventList
+          pageCount={this.state.pageCount}
+          items={this.state.items}
+          handlePageClick={this.handlePageClick}
+        />
+      </div>
+    );
   }
 }
 
