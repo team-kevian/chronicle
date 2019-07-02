@@ -8,8 +8,25 @@
   display: inline-block;
 }
 
+#title {
+  color: white;
+  text-align: center;
+  font-size: 26px;
+}
+
+#description {
+  color: white;
+  text-align: center;
+}
+
 body {
-  background-color: rgb(57, 61, 66);
+  background-color: #0e1216;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input,

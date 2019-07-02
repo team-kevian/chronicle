@@ -96,6 +96,7 @@ class App extends React.Component {
 
   render() {
     return (<div>
+      <div id="title">Chronicle</div>
       <Search onSearch={this.search} 
         onChangeDetect={this.handleChange} 
         term={this.state.term} 
