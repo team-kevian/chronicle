@@ -17,28 +17,15 @@ class App extends React.Component {
   }
 
   getInitialPageAndCount() {
-    let pcount = 0;
     axios
-      .get('http://localhost:3000/events?')
+      .get('http://localhost:3000/events?_page=1')
       .then(data => {
-        pcount = data.data.length / 10;
-
-        axios
-          .get('http://localhost:3000/events?_page=1')
-          .then(data => {
-            console.log('This is pcount:', pcount);
-            this.setState({ items: data.data, pageCount: pcount });
-          })
-          .catch(err => {
-            console.log(
-              'There is an error in retrieving first page of items on component mount '
-            );
-          });
+        let pcount = data.headers['x-total-count'] / 10;
+        this.setState({ items: data.data, pageCount: pcount });
       })
       .catch(err => {
         console.log(
-          'There is an error in retrieving page count on component mount: ',
-          err
+          'There is an error in retrieving first page of items on component mount: ', err
         );
       });
   }
