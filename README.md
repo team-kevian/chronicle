@@ -2,7 +2,8 @@
 
 Historical Events Finder
 
-<img src="https://giant.gfycat.com/optimisticsilkyichthyosaurs.gif" height="100%" width="100%">
+<img src="https://media.giphy.com/media/L0CHpKvzPHM1z3UWSt/giphy.gif" height="100%" width="100%">
+
 
 # Technologies Used
 
