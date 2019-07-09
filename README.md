@@ -2,7 +2,7 @@
 
 Historical Events Finder
 
-<iframe src='https://gfycat.com/ifr/OptimisticSilkyIchthyosaurs' frameborder='0' scrolling='no' allowfullscreen width='640' height='735'></iframe><p> <a href="https://gfycat.com/optimisticsilkyichthyosaurs">via Gfycat</a></p>
+<img src="https://giant.gfycat.com/optimisticsilkyichthyosaurs.gif" height="100%" width="100%">
 
 # Technologies Used
 
