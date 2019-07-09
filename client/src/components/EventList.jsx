@@ -9,6 +9,7 @@ class EventList extends React.Component {
   }
 
   render() {
+    // Component that for number of items in this.props.items returns Cards consisting of data within each item
     return (
       <div>
         {this.props.items.map((item, i) => {
@@ -34,6 +35,7 @@ class EventList extends React.Component {
             </Card>
           );
         })}
+        {/* React Paginate Component */}
         <div className="center" style={{ align: 'middle' }}>
           <ReactPaginate
             previousLabel={'previous'}

@@ -16,16 +16,21 @@ class App extends React.Component {
     this.handlePageClick = this.handlePageClick.bind(this);
   }
 
+  // function that makes initial get request to JSON Server when component first successfully mounts
+  // then sets state with for first 10 items found in events object
   getInitialPageAndCount() {
     axios
       .get('http://localhost:3000/events?_page=1')
       .then(data => {
+        // pcount -> total count of items found inside of events object
+        // used for server-side pagination
         let pcount = data.headers['x-total-count'] / 10;
         this.setState({ items: data.data, pageCount: pcount });
       })
       .catch(err => {
         console.log(
-          'There is an error in retrieving first page of items on component mount: ', err
+          'There is an error in retrieving first page of items on component mount: ',
+          err
         );
       });
   }
@@ -34,6 +39,8 @@ class App extends React.Component {
     this.getInitialPageAndCount();
   }
 
+  // click handler function that when triggered makes query to JSON server for given term or page currently selected
+  // then sets state with what's returned from result of query
   handlePageClick(data) {
     let term = '';
     let page = data.selected + 1;
@@ -58,6 +65,7 @@ class App extends React.Component {
       });
   }
 
+  // invoked when user triggers search button, makes get request to JSON server for search term and sets state with returned data
   search(term) {
     axios
       .get(`/events?q=${term}`)

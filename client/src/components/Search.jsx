@@ -1,8 +1,10 @@
 import React from 'react';
 
+// TODO: Write Comments - Kevin
+
 class Search extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.search = this.search.bind(this);
   }
@@ -12,12 +14,14 @@ class Search extends React.Component {
   }
 
   render() {
-    return (<div>
-      <div className="box">
-      <input value={this.props.term} onChange={this.props.onChangeDetect} />
-      <button onClick={this.search}>Find Results</button>
+    return (
+      <div>
+        <div className="box">
+          <input value={this.props.term} onChange={this.props.onChangeDetect} />
+          <button onClick={this.search}>Find Results</button>
+        </div>
       </div>
-    </div>)
+    );
   }
 }
 
